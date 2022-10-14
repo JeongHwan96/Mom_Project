@@ -37,7 +37,7 @@
               <div>
                 <strong
                   ><p class="first">
-                    <span> 정식명칭:</span>
+                    <span> 정식명칭</span>
                   </p></strong
                 >
               </div>
