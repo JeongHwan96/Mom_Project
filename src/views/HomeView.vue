@@ -1,6 +1,7 @@
 <template>
   <div class="bg">
-    <headerComponents />
+    <!-- <Header_Part /> -->
+    <Mom_Header />
     <!-- <div class="main_text_container">
       <ul class="">
         <div class="">
@@ -50,14 +51,18 @@
 </template>
 
 <script>
-import headerComponents from "../components/Mom_Header.vue";
+// import headerComponents from "../components/Mom_Header.vue";
 import weeklyTeamComponents from "../components/Mom_WeeklyTeam.vue";
 import allTeamComponents from "../components/Mom_All_Team_Select.vue";
+// import Header_Part from "@/components/Header_Part.vue";
+import Mom_Header from "@/components/Mom_Header.vue";
 export default {
   components: {
-    headerComponents,
+    // headerComponents,
     weeklyTeamComponents,
     allTeamComponents,
+    // Header_Part,
+    Mom_Header,
   },
   swiperOption: {
     slidesPerView: 1,
@@ -86,7 +91,7 @@ span {
   height: 100%;
   z-index: -1;
   content: "";
-  background: url(../assets/main_big_bg.png) no-repeat center top;
+  /* background: url(../assets/main_big_bg.png) no-repeat center top; */
   background-size: cover;
 }
 .main_text_container {

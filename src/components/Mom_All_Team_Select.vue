@@ -238,10 +238,10 @@ export default {
 .pickYou {
   font-size: 4rem;
   font-weight: bold;
-  width: 140px;
   color: black;
   font-family: sans-serif;
   top: 80px;
-  left: 200px;
+  left: 300px;
+  text-align: center;
 }
 </style>

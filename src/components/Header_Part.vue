@@ -3,8 +3,8 @@
     <a href="/" class="logo">MOM</a>
 
     <ul>
-      <li><a href="/board/list">게시판</a></li>
-      <li><a href="#">example 2</a></li>
+      <li><a href="/board/list">Board</a></li>
+      <li><a href="#">Login</a></li>
     </ul>
   </div>
 </template>
@@ -31,6 +31,7 @@ export default {};
   height: 75px;
   position: sticky;
   top: 0;
+  z-index: 999;
 }
 
 .header .logo {
