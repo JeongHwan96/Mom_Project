@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import BoardList from "../../src/components/Board/BoardList.vue";
 import BoardInsert from "../../src/components/Board/BoardInsert.vue";
+import BoardRead from "../../src/components/Board/BoardRead.vue";
 
 Vue.use(VueRouter);
 
@@ -21,6 +22,11 @@ const routes = [
     path: "/board/insert",
     name: "boardInsert",
     component: BoardInsert,
+  },
+  {
+    path: "/board/read/",
+    name: "boardRead",
+    component: BoardRead,
   },
   {
     path: "/arsenal",

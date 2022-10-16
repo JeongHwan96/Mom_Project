@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Mom_Header />
+    <Header_Part />
     <div class="overflow-auto container">
       <h3>게시글 목록</h3>
       <b-table
@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import Mom_Header from "../Mom_Header.vue";
+import Header_Part from "../Header_Part.vue";
 
 export default {
   data() {
@@ -65,7 +65,7 @@ export default {
       return this.items.length;
     },
   },
-  components: { Mom_Header },
+  components: { Header_Part },
   methods: {
     goWrite() {
       this.$router.push({ path: "/board/insert" });
@@ -75,10 +75,6 @@ export default {
 </script>
 
 <style scoped>
-.container {
-  padding-right: 200px;
-  padding-left: 200px;
-}
 h3 {
   padding-top: 30px;
   margin-bottom: 10px;

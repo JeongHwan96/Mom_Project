@@ -1,7 +1,7 @@
 <template>
   <div class="bg">
     <headerComponents />
-    <div class="main_text_container">
+    <!-- <div class="main_text_container">
       <ul class="">
         <div class="">
           <div class="" style="opacity: 1; width: 1036px">
@@ -44,24 +44,36 @@
           </div>
         </div>
       </ul>
-    </div>
-    <matchDay />
-    <allTeamComponents />
+    </div> -->
+
     <weeklyTeamComponents />
+    <allTeamComponents />
   </div>
 </template>
 
 <script>
 import headerComponents from "../components/Mom_Header.vue";
-import matchDay from "../components/Mom_MatchDay.vue";
 import weeklyTeamComponents from "../components/Mom_WeeklyTeam.vue";
 import allTeamComponents from "../components/Mom_All_Team_Select.vue";
+
 export default {
   components: {
     headerComponents,
     weeklyTeamComponents,
     allTeamComponents,
-    matchDay,
+  },
+  swiperOption: {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
   },
 };
 </script>

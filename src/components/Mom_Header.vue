@@ -25,7 +25,7 @@ export default {};
 }
 body {
   background: #2f1839;
-  min-height: 200vh;
+  /* min-height: 200vh; */
 }
 
 header {

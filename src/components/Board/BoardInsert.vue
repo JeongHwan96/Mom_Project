@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Mom_Header />
+    <Header_Part />
     <div class="container">
       <h3>게시글 작성</h3>
 
@@ -42,10 +42,10 @@
 </template>
 
 <script>
-import Mom_Header from "../Mom_Header.vue";
+import Header_Part from "../Header_Part.vue";
 
 export default {
-  components: { Mom_Header },
+  components: { Header_Part },
   data() {
     return {
       form: {
@@ -78,11 +78,6 @@ export default {
 </script>
 
 <style scoped>
-.container {
-  padding-right: 200px;
-  padding-left: 200px;
-  font-size: 20px;
-}
 h3 {
   padding-top: 30px;
   border-bottom: 1px solid black;
