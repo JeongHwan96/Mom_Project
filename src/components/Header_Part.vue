@@ -3,7 +3,7 @@
     <a href="/" class="logo">Man of the Match</a>
 
     <ul>
-      <li><a href="/board/list">Board</a></li>
+      <li><a href="/board/list">자유게시판</a></li>
       <li>
         <a href="/arsenal">
           <img src="@/assets/Logo/ars.png" class="userSelectedTeam" />
@@ -25,7 +25,8 @@ export default {};
 }
 
 .header {
-  background: #2f1839;
+  /* background: #2f1839; */
+  background: black;
   color: white;
   padding-left: 32px;
   padding-right: 32px;

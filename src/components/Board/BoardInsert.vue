@@ -27,7 +27,7 @@
         </b-form-group>
 
         <div class="btn-area">
-          <b-button type="submit">글쓰기</b-button>
+          <b-button type="submit">글쓰기 완료</b-button>
         </div>
       </b-form>
     </div>
@@ -74,9 +74,7 @@ export default {
 
 <style scoped>
 h3 {
-  padding-top: 0;
-  border-bottom: 1px solid black;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .content {

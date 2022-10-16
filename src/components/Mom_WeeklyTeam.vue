@@ -13,6 +13,7 @@
       @sliding-start="onSlideStart"
       @sliding-end="onSlideEnd"
     >
+      ><b-carousel-slide img-src="@/assets/weekly/week.jpg"></b-carousel-slide>
       <a href="/arsenal"
         ><b-carousel-slide
           img-src="@/assets/weekly/arsnalmain.jpg"

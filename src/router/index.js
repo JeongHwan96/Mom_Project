@@ -24,7 +24,7 @@ const routes = [
     component: BoardInsert,
   },
   {
-    path: "/board/read/",
+    path: "/board/read/글제목19",
     name: "boardRead",
     component: BoardRead,
   },

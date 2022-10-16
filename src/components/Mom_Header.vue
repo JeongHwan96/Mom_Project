@@ -3,7 +3,7 @@
     <a href="/" class="logo">Man of the Match</a>
 
     <ul>
-      <li><a href="/board/list" class="goBoard">BOARD</a></li>
+      <li><a href="/board/list" class="goBoard">자유게시판</a></li>
       <li>
         <a href="/arsenal">
           <img src="@/assets/Logo/ars.png" class="userSelectedTeam" />
