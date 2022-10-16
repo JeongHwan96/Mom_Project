@@ -1,63 +1,85 @@
 <template>
-  <header class="" style="">
-    <div class="Header_container">
-      <div class="logo">
-        <a href="index"></a>
-      </div>
+  <header>
+    <a href="/" class="logo">MOM</a>
 
-      <ul class="menu">
-        <li><a href="#">example 1</a></li>
-        <li><a href="#">example 2</a></li>
-        <li><a href="#">example 3</a></li>
-        <li><a href="#">example 4</a></li>
-      </ul>
-    </div>
+    <ul>
+      <li><a href="/board/list">게시판</a></li>
+      <li><a href="#">example 2</a></li>
+    </ul>
   </header>
 </template>
 
 <script>
+window.addEventListener("scroll", function () {
+  var header = this.document.querySelector("header");
+  header.classList.toggle("sticky", this.window.scrollY > 0);
+});
 export default {};
 </script>
 
 <style>
-header {
-  width: 100%;
-  height: 96px;
-  position: fixed;
-  z-index: 10;
-  background: transparent;
-  transition: all 0.4s;
-}
-.Header_container {
-  width: 1180px;
-  max-width: 1180px;
-  min-width: 1180px;
-  height: inherit;
-  margin: 0 auto;
-  position: relative;
-  overflow: hidden;
-}
-.logo {
-  width: 320px;
-  height: 100%;
-  background: url(../assets/pybp.png) no-repeat center left;
-  background-size: 40%;
-  float: left;
-}
-.menu {
-  height: inherit;
-  float: right;
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.menu li {
-  display: inline-block;
-  margin: 0 16px;
-  line-height: 100px;
-  transition: all 0.4s;
+body {
+  background: #2f1839;
+  min-height: 200vh;
 }
-.menu li a {
-  color: #ffffff;
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.6s;
+  padding: 40px 100px;
+  z-index: 100000;
+}
+
+header.sticky {
+  padding: 5px 100px;
+  background-color: #fff;
+}
+header.sticky .logo,
+header.sticky ul li a {
+  color: #000;
+}
+
+header .logo {
+  position: relative;
+  font-weight: 700;
+  color: #fff;
   text-decoration: none;
+  font-size: 2em;
+  text-transform: uppercase;
+  transition: 0.6s;
+  letter-spacing: 2px;
+}
+
+header ul {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header ul li {
+  position: relative;
   list-style: none;
+}
+
+header ul li a {
+  position: relative;
+  margin: 0 15px;
+  text-decoration: none;
+  color: #fff;
+  letter-spacing: 2px;
+  font-weight: 500px;
+  transition: 0.6s;
 }
 </style>
