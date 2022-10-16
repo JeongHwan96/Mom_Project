@@ -2,57 +2,18 @@
   <div class="arsenal_total_div">
     <div class="logoImg">
       <img src="../assets/Logo/ars.png" alt="" class="arsenalLogo" />
-      <div class="teamName-kr">
+      <div class="arsenal_teamName">
         <span>{{ teamName }}</span>
       </div>
-      <div class="teamName-en" style="border-bottom: 1px solid #ddd">
-        <span>{{ teamName_en }}</span>
-      </div>
-
-      <table
-        v-for="teamdata in team"
-        :key="teamdata.identifier"
-        style="width: 100%"
-      >
-        <tbody>
-          <!-- 정식명칭 section -->
-          <tr>
-            <td class="td_style">
-              <div>
-                <strong
-                  ><p class="first">
-                    <span> 정식명칭</span>
-                  </p></strong
-                >
-              </div>
-            </td>
-            <td class="underLine">
-              <div>{{ teamdata.team_name }}</div>
-            </td>
-          </tr>
-
-          <!-- 별칭 section -->
-          <tr>
-            <td class="td_style">
-              <div>
-                <strong
-                  ><p class="first">
-                    <span> 정식명칭</span>
-                  </p></strong
-                >
-              </div>
-            </td>
-            <td class="underLine">
-              <div>{{ teamdata.nickname }}</div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-
-      <!-- <p class="first"><span> 별칭:</span>{{ teamdata.nickname }}</p>
-        <p class="first"><span> 창단일:</span>{{ teamdata.establish }}</p>
-        <p class="first"><span> 소속리그:</span>{{ teamdata.league }}</p>
-        <p class="first"><span> 연고지:</span>{{ teamdata.hometown }}</p> -->
+      <ul>
+        <li v-for="teamdata in team" :key="teamdata.identifier">
+          <p class="first"><span> 정식명칭:</span>{{ teamdata.team_name }}</p>
+          <p class="first"><span> 별칭:</span>{{ teamdata.nickname }}</p>
+          <p class="first"><span> 창단일:</span>{{ teamdata.establish }}</p>
+          <p class="first"><span> 소속리그:</span>{{ teamdata.league }}</p>
+          <p class="first"><span> 연고지:</span>{{ teamdata.hometown }}</p>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -65,8 +26,7 @@ export default {
   data() {
     return {
       team: arsenalPart,
-      teamName: "아스널 FC",
-      teamName_en: "Arsenal FC",
+      teamName: "아스널FC",
     };
   },
 };
@@ -85,7 +45,7 @@ export default {
 .arsenalLogo {
   width: 10%;
 }
-.teamName-kr {
+.arsenal_teamName {
   background-image: linear-gradient(
     to right,
     #023474 4%,
@@ -97,22 +57,5 @@ export default {
     #fff 96%,
     #023474 96%
   );
-}
-li {
-  text-align: left;
-}
-.desc_title {
-  width: 10%;
-  border: 1px solid;
-}
-.td_style {
-  width: 25%;
-  text-align: center;
-  border-bottom: 1px solid white;
-  background-color: red;
-}
-.underLine {
-  border-bottom: 1px solid #ddd;
-  text-align: left;
 }
 </style>

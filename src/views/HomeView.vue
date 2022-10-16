@@ -23,7 +23,6 @@
                       <span>당신이 생각하는</span>
                       <span>최고의 선수를 뽑아주세요</span>
                     </h1>
-
                     <h2 class="subtitle">
                       <span>이번 경기 중</span>
                       <span
@@ -36,7 +35,6 @@
                       <span>2022년 1월 23일 여러분을 찾아갑니다.</span>
                     </h2>
                   </div>
-
                   <div class="img"></div>
                 </li>
               </div>
@@ -55,7 +53,6 @@
 import headerComponents from "../components/Mom_Header.vue";
 import weeklyTeamComponents from "../components/Mom_WeeklyTeam.vue";
 import allTeamComponents from "../components/Mom_All_Team_Select.vue";
-
 export default {
   components: {
     headerComponents,
@@ -89,7 +86,6 @@ span {
   height: 100%;
   z-index: -1;
   content: "";
-
   background: url(../assets/main_big_bg.png) no-repeat center top;
   background-size: cover;
 }

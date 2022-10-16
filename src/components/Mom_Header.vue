@@ -53,7 +53,7 @@ header.sticky ul li a {
 header .logo {
   position: relative;
   font-weight: 700;
-  color: #fff;
+  color: white;
   text-decoration: none;
   font-size: 2em;
   text-transform: uppercase;
