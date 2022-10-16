@@ -13,6 +13,7 @@
         :items="items"
         :per-page="perPage"
         :current-page="currentPage"
+        @row-clicked="rowClick"
         small
       ></b-table>
       <div class="btn-area">
@@ -71,6 +72,9 @@ export default {
     goWrite() {
       this.$router.push({ path: "/board/insert" });
     },
+    rowClick(items) {
+      this.$router.push({ path: `/board/read/${items.Title}` });
+    },
   },
 };
 </script>
@@ -124,5 +128,8 @@ h3 {
 .customPagination > li > a:hover {
   color: white;
   background-color: green !important;
+}
+#my-table {
+  cursor: pointer;
 }
 </style>

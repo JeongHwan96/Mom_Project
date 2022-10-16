@@ -5,36 +5,29 @@
       <h3>게시글 작성</h3>
 
       <b-form @submit="onSubmit" @reset="onReset" v-if="show">
-        <b-form-group
-          id="input-group-1"
-          label="제목"
-          label-for="input-1"
-          class="title-area"
-        >
-          <b-form-input
-            id="input-1"
-            v-model="form.title"
-            type="text"
-            required
-          ></b-form-input>
-        </b-form-group>
+        <b-form-input
+          id="input-1"
+          v-model="form.title"
+          placeholder="제목"
+          type="text"
+          required
+        ></b-form-input>
 
         <b-form-group
           id="input-group-2"
-          label="내용"
           label-for="input-2"
           class="content-area"
         >
-          <b-form-input
-            id="input-2"
+          <vue-editor
             v-model="form.content"
+            id="input-2"
             required
             class="content"
-          ></b-form-input>
+          ></vue-editor>
         </b-form-group>
-        <br />
+
         <div class="btn-area">
-          <b-button type="submit" variant="primary">Submit</b-button>
+          <b-button type="submit">글쓰기</b-button>
         </div>
       </b-form>
     </div>
@@ -43,11 +36,13 @@
 
 <script>
 import Header_Part from "../Header_Part.vue";
+import { VueEditor } from "vue2-editor";
 
 export default {
-  components: { Header_Part },
+  components: { Header_Part, VueEditor },
   data() {
     return {
+      content: "<h1>Some initial content</h1>",
       form: {
         title: "",
         content: "",
@@ -79,7 +74,7 @@ export default {
 
 <style scoped>
 h3 {
-  padding-top: 30px;
+  padding-top: 0;
   border-bottom: 1px solid black;
   margin-bottom: 30px;
 }
@@ -93,5 +88,20 @@ h3 {
 .btn-area {
   display: flex;
   justify-content: right;
+  margin-top: 80px;
+}
+#input-1 {
+  height: 80px;
+  border: none;
+  border-bottom: 1px solid black;
+  border-radius: 0;
+}
+
+#input-1::placeholder {
+  font-size: 1.5rem;
+}
+.form-control:focus {
+  border-color: inherit !important;
+  box-shadow: inherit !important;
 }
 </style>
