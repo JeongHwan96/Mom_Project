@@ -1,6 +1,9 @@
 <template>
   <div>
     <Header_Part />
+    <div class="boardBar">
+      <div class="boardList">BOARD > LIST</div>
+    </div>
     <div class="overflow-auto container">
       <h3>게시글 목록</h3>
       <b-table
@@ -23,8 +26,6 @@
           aria-controls="my-table"
         ></b-pagination>
       </div>
-
-      <!-- <p class="mt-3">Current Page: {{ currentPage }}</p> -->
     </div>
   </div>
 </template>
@@ -76,7 +77,7 @@ export default {
 
 <style scoped>
 h3 {
-  padding-top: 30px;
+  padding-top: 0;
   margin-bottom: 10px;
   border-bottom: 1px solid black;
 }
@@ -99,5 +100,29 @@ h3 {
 .btn-area {
   display: flex;
   justify-content: right;
+}
+
+.boardBar {
+  background: url("@/assets/weekly/throphy3.jpg") 3% no-repeat;
+  background-size: cover;
+  height: 400px;
+}
+
+.boardList {
+  text-align: center;
+  color: rgb(226, 185, 108);
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 400px;
+}
+
+.customPagination > li > a {
+  color: red;
+}
+
+.customPagination > li.active > a,
+.customPagination > li > a:hover {
+  color: white;
+  background-color: green !important;
 }
 </style>

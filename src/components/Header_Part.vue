@@ -1,10 +1,14 @@
 <template>
   <div class="header">
-    <a href="/" class="logo">MOM</a>
+    <a href="/" class="logo">Man of the Match</a>
 
     <ul>
       <li><a href="/board/list">Board</a></li>
-      <li><a href="#">Login</a></li>
+      <li>
+        <a href="/arsenal">
+          <img src="@/assets/Logo/ars.png" class="userSelectedTeam" />
+        </a>
+      </li>
     </ul>
   </div>
 </template>
@@ -65,5 +69,10 @@ export default {};
   letter-spacing: 2px;
   font-weight: 500px;
   transition: 0.6s;
+}
+
+.userSelectedTeam {
+  width: 30px;
+  height: 30px;
 }
 </style>

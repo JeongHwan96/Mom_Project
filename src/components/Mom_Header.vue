@@ -1,10 +1,14 @@
 <template>
   <header>
-    <a href="/" class="logo">MOM</a>
+    <a href="/" class="logo">Man of the Match</a>
 
     <ul>
-      <li><a href="/board/list">게시판</a></li>
-      <li><a href="#">example 2</a></li>
+      <li><a href="/board/list" class="goBoard">BOARD</a></li>
+      <li>
+        <a href="/arsenal">
+          <img src="@/assets/Logo/ars.png" class="userSelectedTeam" />
+        </a>
+      </li>
     </ul>
   </header>
 </template>
@@ -22,6 +26,7 @@ export default {};
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Noto Sans KR";
 }
 body {
   background: #2f1839;
@@ -37,12 +42,12 @@ header {
   justify-content: space-between;
   align-items: center;
   transition: 0.6s;
-  padding: 40px 100px;
+  padding: 30px 70px;
   z-index: 100000;
 }
 
 header.sticky {
-  padding: 5px 100px;
+  padding: 10px 100px;
   background-color: #fff;
 }
 header.sticky .logo,
@@ -81,5 +86,23 @@ header ul li a {
   letter-spacing: 2px;
   font-weight: 500px;
   transition: 0.6s;
+}
+
+.userSelectedTeam {
+  width: 30px;
+  height: 30px;
+}
+
+.goBoard {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+header .logo:hover {
+  color: white;
+}
+
+header .goBoard:hover {
+  color: white;
 }
 </style>

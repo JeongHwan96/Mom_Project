@@ -1,7 +1,5 @@
 module.exports = {
-  transpileDependencies: [
-    'vuetify'
-  ],
+  transpileDependencies: [],
 };
 
 module.exports = {
@@ -27,8 +25,4 @@ module.exports = {
         return options;
       });
   },
-
-  transpileDependencies: [
-    'vuetify'
-  ]
 };

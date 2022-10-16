@@ -7,8 +7,8 @@
       controls
       indicators
       background="#ababab"
-      img-width="1024"
-      img-height="480"
+      img-width="1920"
+      img-height="1080"
       style="text-shadow: 1px 1px 2px #333"
       @sliding-start="onSlideStart"
       @sliding-end="onSlideEnd"
@@ -16,6 +16,11 @@
       <a href="/arsenal"
         ><b-carousel-slide
           img-src="@/assets/weekly/arsnalmain.jpg"
+        ></b-carousel-slide
+      ></a>
+      <a href="/arsenal"
+        ><b-carousel-slide
+          img-src="@/assets/weekly/arsnalmain2.jpg"
         ></b-carousel-slide
       ></a>
     </b-carousel>
@@ -40,3 +45,8 @@ export default {
   },
 };
 </script>
+<style>
+.sr-only {
+  display: none;
+}
+</style>

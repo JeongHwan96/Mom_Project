@@ -238,8 +238,8 @@ export default {
 .pickYou {
   font-size: 4rem;
   font-weight: bold;
-  color: black;
-  font-family: sans-serif;
+  color: #fff;
+  text-shadow: 6px 2px 2px rgb(78, 77, 77);
   top: 80px;
   left: 300px;
   text-align: center;
