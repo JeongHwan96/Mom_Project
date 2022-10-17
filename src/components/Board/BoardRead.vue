@@ -2,25 +2,22 @@
   <div>
     <Header_Part />
     <div class="readArea">
-      <div class="content-detail-button">
-        <b-button variant="primary" @click="updateData">이전글</b-button>
-        <b-button variant="success" @click="deleteData">다음글</b-button>
-        <b-button variant="success" @click="deleteData">목록</b-button>
-      </div>
       <b-card>
         <div class="content-detail-content-info">
           <div class="content-detail-content-info-left">
-            <div class="content-detail-content-info-left-number">NO.19</div>
-            <div class="content-detail-content-info-left-subject">
-              답답하면 니들이 뛰던지
-            </div>
-          </div>
-          <div class="content-detail-content-info-right">
-            <div class="content-detail-content-info-right-user">
-              글쓴이: Shaw
-            </div>
-            <div class="content-detail-content-info-right-created">
-              등록일: 2022-10-15
+            <div class="topArea">
+              <div class="content-detail-content-info-left-number">NO.19</div>
+              <div class="content-detail-content-info-left-subject">
+                답답하면 니들이 뛰던지
+              </div>
+              <div class="content-detail-content-info-right">
+                <div class="content-detail-content-info-right-user">
+                  글쓴이: Shaw
+                </div>
+                <div class="content-detail-content-info-right-created">
+                  등록일: 2022-10-15
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -69,8 +66,17 @@
           너, 우리를 믿지 못하게 되어버린 걸까.
         </div>
 
-        <div class="content-detail-comment">덧글</div>
+        <div class="content-detail-comment">
+          댓글
+          <button class="replyButton">등록</button>
+        </div>
       </b-card>
+    </div>
+
+    <div class="content-detail-button">
+      <b-button @click="PrevRead">이전글</b-button>
+      <b-button @click="NextRead">다음글</b-button>
+      <b-button @click="goList">글목록</b-button>
     </div>
   </div>
 </template>
@@ -78,7 +84,14 @@
 <script>
 import Header_Part from "../Header_Part.vue";
 
-export default { components: { Header_Part } };
+export default {
+  components: { Header_Part },
+  methods: {
+    goList() {
+      this.$router.push({ path: "/board/list" });
+    },
+  },
+};
 </script>
 
 <style>
@@ -101,10 +114,10 @@ export default { components: { Header_Part } };
 .content-detail-content-info-right {
   width: 300px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
+  flex-direction: row;
+  justify-content: left;
+  color: gray;
+  padding-top: 10px;
 }
 .content-detail-content {
   margin-top: 1rem;
@@ -114,12 +127,38 @@ export default { components: { Header_Part } };
   min-height: 720px;
 }
 .content-detail-button {
-  margin-top: 1rem;
-  padding: 2rem;
+  padding-top: 10px;
+  padding-bottom: 30px;
+  display: flex;
+  justify-content: right;
+  margin-right: 280px;
 }
 .content-detail-comment {
   border: 1px solid black;
   margin-top: 1rem;
   padding: 2rem;
+}
+
+.content-detail-content-info-left-subject {
+  font-size: 2rem;
+}
+.content-detail-content-info-left-number {
+  color: gray;
+}
+.content-detail-content-info-right-user {
+  margin-right: 10px;
+}
+
+.replyButton {
+  background: gray;
+  width: 50px;
+  height: 30px;
+  border: 0;
+  border-radius: 3px;
+  float: right;
+  color: white;
+}
+.btn-secondary {
+  margin-right: 2px;
 }
 </style>

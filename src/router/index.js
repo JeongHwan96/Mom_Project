@@ -29,6 +29,14 @@ const routes = [
     component: BoardRead,
   },
   {
+    path: "/arsenal/player",
+    name: "player",
+    component: () =>
+      import(
+        /* webpackChunkName: "about" */ "../components/asenal/asenalPlayer.vue"
+      ),
+  },
+  {
     path: "/arsenal",
     name: "arsenal",
     // route level code-splitting

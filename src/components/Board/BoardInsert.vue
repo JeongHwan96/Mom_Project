@@ -2,7 +2,7 @@
   <div>
     <Header_Part />
     <div class="container">
-      <h2>게시글 작성</h2>
+      <h2 class="container4">게시글 작성</h2>
 
       <b-form @submit="onSubmit" @reset="onReset" v-if="show">
         <b-form-input
@@ -102,5 +102,9 @@ h2 {
 .form-control:focus {
   border-color: inherit !important;
   box-shadow: inherit !important;
+}
+
+.container4 {
+  margin-top: 3%;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header_Part />
+    <HeaderHe />
     <div class="boardBar">
       <div class="boardList">BOARD > LIST</div>
     </div>
@@ -25,6 +25,7 @@
           :total-rows="rows"
           :per-page="perPage"
           aria-controls="my-table"
+          class="customPagination"
         ></b-pagination>
       </div>
     </div>
@@ -32,7 +33,7 @@
 </template>
 
 <script>
-import Header_Part from "../Header_Part.vue";
+import HeaderHe from "../HeaderHe.vue";
 
 export default {
   data() {
@@ -87,7 +88,7 @@ export default {
       return this.items.length;
     },
   },
-  components: { Header_Part },
+  components: { HeaderHe },
   methods: {
     goWrite() {
       this.$router.push({ path: "/board/insert" });
@@ -101,7 +102,7 @@ export default {
 
 <style scoped>
 h3 {
-  padding-top: 0;
+  padding-top: 30px;
   margin-bottom: 10px;
   border-bottom: 1px solid black;
 }
@@ -130,6 +131,7 @@ h3 {
   background: url("@/assets/weekly/throphy3.jpg") 3% no-repeat;
   background-size: cover;
   height: 400px;
+  margin-top: 100px;
 }
 
 .boardList {
@@ -140,15 +142,6 @@ h3 {
   line-height: 400px;
 }
 
-.customPagination > li > a {
-  color: red;
-}
-
-.customPagination > li.active > a,
-.customPagination > li > a:hover {
-  color: white;
-  background-color: green !important;
-}
 #my-table {
   cursor: pointer;
 }

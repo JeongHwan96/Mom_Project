@@ -1,10 +1,9 @@
 <template>
   <div class="selectTeam">
-    <div class="container">
+    <div class="container2">
       <!--player-->
       <h1 class="pickYou">PICK YOUR FAVORITE</h1>
       <div class="players">
-        <modalPop />
         <div class="player">
           <router-link to="/arsenal"><div class="image"></div></router-link>
         </div>
@@ -71,19 +70,14 @@
 </template>
 
 <script>
-import modalPop from "../components/Mom_Modal.vue";
-export default {
-  components: {
-    modalPop,
-  },
-};
+export default {};
 </script>
 
 <style>
 .selectTeam {
   background: url(../assets/bg_main_0517.jpg) center center fixed no-repeat;
 }
-.container {
+.container2 {
   padding: 50px 0;
 }
 .players {
@@ -120,7 +114,7 @@ export default {
   background-size: 90px;
 }
 .player:nth-child(1) .image {
-  background-image: url("../assets/Logo/ars.png");
+  background-image: url("../assets/Logo/ars1.png");
   background-size: 120px 120px;
   background-position: 33% 67%;
 }
