@@ -40,10 +40,30 @@ export default {
       perPage: 15,
       currentPage: 1,
       items: [
-        { NO: 19, Title: "글제목19", 작성자: "Shaw", 작성일: "2022-10-15" },
-        { NO: 18, Title: "글제목18", 작성자: "Shaw", 작성일: "2022-10-15" },
-        { NO: 17, Title: "글제목17", 작성자: "Shaw", 작성일: "2022-10-15" },
-        { NO: 16, Title: "글제목16", 작성자: "Shaw", 작성일: "2022-10-15" },
+        {
+          NO: 19,
+          Title: "답답하면 니들이 뛰던지",
+          작성자: "Shaw",
+          작성일: "2022-10-15",
+        },
+        {
+          NO: 18,
+          Title: "오늘 경기 첼시가 이길듯",
+          작성자: "Shaw",
+          작성일: "2022-10-15",
+        },
+        {
+          NO: 17,
+          Title: "토트넘 화이팅",
+          작성자: "Shaw",
+          작성일: "2022-10-15",
+        },
+        {
+          NO: 16,
+          Title: "축구 왤케 못함",
+          작성자: "Shaw",
+          작성일: "2022-10-15",
+        },
         { NO: 15, Title: "글제목15", 작성자: "Wilson", 작성일: "2022-10-15" },
         { NO: 14, Title: "글제목14", 작성자: "Carney", 작성일: "2022-10-15" },
         { NO: 13, Title: "글제목13", 작성자: "Carney", 작성일: "2022-10-15" },
@@ -73,7 +93,7 @@ export default {
       this.$router.push({ path: "/board/insert" });
     },
     rowClick(items) {
-      this.$router.push({ path: `/board/read/${items.Title}` });
+      this.$router.push({ path: `/board/read/${items.NO}` });
     },
   },
 };

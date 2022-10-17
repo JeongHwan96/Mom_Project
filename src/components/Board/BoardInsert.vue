@@ -2,7 +2,7 @@
   <div>
     <Header_Part />
     <div class="container">
-      <h3>게시글 작성</h3>
+      <h2>게시글 작성</h2>
 
       <b-form @submit="onSubmit" @reset="onReset" v-if="show">
         <b-form-input
@@ -73,8 +73,9 @@ export default {
 </script>
 
 <style scoped>
-h3 {
+h2 {
   margin-bottom: 10px;
+  font-family: "Noto Sans KR";
 }
 
 .content {
