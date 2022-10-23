@@ -34,52 +34,42 @@
 
 <script>
 import HeaderHe from "../HeaderHe.vue";
+import board from "@/Data/data.js";
+let items = board.Contents.sort((a, b) => {
+  return b.content_id - a.content_id; //게시글을 역순으로 가져오기 위해 사용한 sort함수
+});
 
+items = items.map((contentItem) => {
+  return {
+    ...contentItem,
+    user_name: board.User.filter(
+      (userItem) => userItem.user_id === contentItem.user_id
+    )[0].name,
+  };
+}); //Contents에 user_id User에 있는 user_id를 연결한다. 두 테이블을  외래키 연결하는 느낌...
 export default {
   data() {
     return {
       perPage: 15,
       currentPage: 1,
-      items: [
+      items: items,
+      fields: [
         {
-          NO: 19,
-          Title: "답답하면 니들이 뛰던지",
-          작성자: "Shaw",
-          작성일: "2022-10-15",
+          key: "content_id",
+          labe: "글번호",
         },
         {
-          NO: 18,
-          Title: "오늘 경기 첼시가 이길듯",
-          작성자: "Shaw",
-          작성일: "2022-10-15",
+          key: "title",
+          labe: "제목",
         },
         {
-          NO: 17,
-          Title: "토트넘 화이팅",
-          작성자: "Shaw",
-          작성일: "2022-10-15",
+          key: "user_name",
+          labe: "작성자",
         },
         {
-          NO: 16,
-          Title: "축구 왤케 못함",
-          작성자: "Shaw",
-          작성일: "2022-10-15",
+          key: "create_at",
+          labe: "작성일",
         },
-        { NO: 15, Title: "글제목15", 작성자: "Wilson", 작성일: "2022-10-15" },
-        { NO: 14, Title: "글제목14", 작성자: "Carney", 작성일: "2022-10-15" },
-        { NO: 13, Title: "글제목13", 작성자: "Carney", 작성일: "2022-10-15" },
-        { NO: 12, Title: "글제목12", 작성자: "Carney", 작성일: "2022-10-15" },
-        { NO: 11, Title: "글제목11", 작성자: "Carney", 작성일: "2022-10-15" },
-        { NO: 10, Title: "글제목10", 작성자: "Carney", 작성일: "2022-10-15" },
-        { NO: 9, Title: "글제목9", 작성자: "Carney", 작성일: "2022-10-15" },
-        { NO: 8, Title: "글제목8", 작성자: "Carney", 작성일: "2022-10-15" },
-        { NO: 7, Title: "글제목7", 작성자: "Carney", 작성일: "2022-10-15" },
-        { NO: 6, Title: "글제목6", 작성자: "Carney", 작성일: "2022-10-15" },
-        { NO: 5, Title: "글제목5", 작성자: "Carney", 작성일: "2022-10-15" },
-        { NO: 4, Title: "글제목4", 작성자: "Carney", 작성일: "2022-10-15" },
-        { NO: 3, Title: "글제목3", 작성자: "Carney", 작성일: "2022-10-15" },
-        { NO: 2, Title: "글제목2", 작성자: "Carney", 작성일: "2022-10-15" },
-        { NO: 1, Title: "글제목1", 작성자: "Carney", 작성일: "2022-10-15" },
       ],
     };
   },
@@ -130,7 +120,7 @@ h3 {
 .boardBar {
   background: url("@/assets/weekly/throphy3.jpg") 3% no-repeat;
   background-size: cover;
-  height: 400px;
+  height: 250px;
   margin-top: 100px;
 }
 
@@ -139,7 +129,7 @@ h3 {
   color: rgb(226, 185, 108);
   font-size: 3rem;
   font-weight: bold;
-  line-height: 400px;
+  line-height: 250px;
 }
 
 #my-table {
