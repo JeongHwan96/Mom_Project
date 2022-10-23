@@ -44,6 +44,7 @@ header {
   transition: 0.6s;
   padding: 30px 70px;
   z-index: 100000;
+  background-color: #000;
 }
 
 header.sticky {

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <HeaderHe />
+    <Mom_Header />
     <div class="boardBar">
       <div class="boardList">BOARD > LIST</div>
     </div>
@@ -11,6 +11,7 @@
         hove
         id="my-table"
         :items="items"
+        :fields="fields"
         :per-page="perPage"
         :current-page="currentPage"
         @row-clicked="rowClick"
@@ -33,22 +34,23 @@
 </template>
 
 <script>
-import HeaderHe from "../HeaderHe.vue";
 import board from "@/Data/data.js";
-let items = board.Contents.sort((a, b) => {
-  return b.content_id - a.content_id; //게시글을 역순으로 가져오기 위해 사용한 sort함수
-});
+import Mom_Header from "../Mom_Header.vue";
 
-items = items.map((contentItem) => {
-  return {
-    ...contentItem,
-    user_name: board.User.filter(
-      (userItem) => userItem.user_id === contentItem.user_id
-    )[0].name,
-  };
-}); //Contents에 user_id User에 있는 user_id를 연결한다. 두 테이블을  외래키 연결하는 느낌...
 export default {
   data() {
+    let items = board.Contents.sort((a, b) => {
+      return b.content_id - a.content_id; //게시글을 역순으로 가져오기 위해 사용한 sort함수
+    });
+
+    items = items.map((contentItem) => {
+      return {
+        ...contentItem,
+        user_name: board.User.filter(
+          (userItem) => userItem.user_id === contentItem.user_id
+        )[0].name,
+      };
+    }); //Contents에 user_id User에 있는 user_id를 연결한다. 두 테이블을  외래키 연결하는 느낌...
     return {
       perPage: 15,
       currentPage: 1,
@@ -78,13 +80,14 @@ export default {
       return this.items.length;
     },
   },
-  components: { HeaderHe },
+  components: { Mom_Header },
   methods: {
     goWrite() {
       this.$router.push({ path: "/board/insert" });
     },
     rowClick(items) {
-      this.$router.push({ path: `/board/read/${items.NO}` });
+      //게시글을 클릭했을때 해당 게시글로 이동
+      this.$router.push({ path: `/board/read/${items.content_id}` });
     },
   },
 };

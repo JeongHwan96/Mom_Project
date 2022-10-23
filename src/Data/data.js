@@ -81,6 +81,22 @@ export default {
   Comment: [
     {
       comment_id: 1,
+      user_id: 2,
+      content_id: 6,
+      context: "나는 네네",
+      create_at: "2022-10-24 18:19:42",
+      update_at: null,
+    },
+    {
+      comment_id: 2,
+      user_id: 3,
+      content_id: 5,
+      context: "난 피자먹으려고",
+      create_at: "2022-10-21 16:19:42",
+      update_at: null,
+    },
+    {
+      comment_id: 1,
       user_id: 1,
       content_id: 3,
       context: "답답하면 니들이 뛰던지 뭐냐고",

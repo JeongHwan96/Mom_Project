@@ -19,12 +19,13 @@ const routes = [
     component: BoardList,
   },
   {
-    path: "/board/insert",
+    path: "/board/insert/:contentId?",
+    //글쓰기, 수정에 쓰임 contentId는 수정때만 쓰이고 (등록에는 쓰이지 않으므로) 필수요소가 아니라 선택적으로 들어가게 하기위해 물음표를 붙였음
     name: "boardInsert",
     component: BoardInsert,
   },
   {
-    path: `/board/read/19`,
+    path: "/board/read/:contentId",
     name: "boardRead",
     component: BoardRead,
   },
