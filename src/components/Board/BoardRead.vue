@@ -14,7 +14,7 @@
               </div>
               <div class="content-detail-content-info-right">
                 <div class="content-detail-content-info-right-user">
-                  글쓴이: {{ name }}
+                  글쓴이: {{ writer }}
                 </div>
                 <div class="content-detail-content-info-right-created">
                   등록일: {{ created_at }}
@@ -33,7 +33,7 @@
 
         <div class="content-detail-comment">
           <BoardComment :contentId="contentId" />
-          <button class="replyButton">등록</button>
+          <!-- <button class="replyButton">등록</button> -->
         </div>
       </b-card>
     </div>
@@ -63,8 +63,9 @@ export default {
       contentId: contentId,
       title: contentData.title,
       context: contentData.context,
-      user: board.User.filter((item) => item.user_id === contentData.user_id)[0]
-        .name,
+      writer: board.User.filter(
+        (item) => item.user_id === contentData.user_id
+      )[0].name,
       created_at: contentData.create_at,
     };
   },
@@ -158,7 +159,7 @@ export default {
   margin-right: 10px;
 }
 
-.replyButton {
+/* .replyButton {
   background: gray;
   width: 50px;
   height: 30px;
@@ -166,7 +167,7 @@ export default {
   border-radius: 3px;
   float: right;
   color: white;
-}
+} */
 .btn-secondary {
   margin-right: 2px;
 }

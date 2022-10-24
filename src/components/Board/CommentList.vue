@@ -1,65 +1,101 @@
 <template>
   <div>
-    <div class="comment-list-item">
-      <div class="comment-list-item-name">
-        <div>작성자</div>
+    <div class="comment-area">
+      <div class="comment-writer-area">
+        <div>{{ commentWriter }}</div>
       </div>
-      <div class="comment-list-item-context">{{ commentObj.context }}</div>
-      <div class="comment-list-item-button">
-        <b-button variant="info">수정</b-button>
-        <b-button variant="info">삭제</b-button>
+      <div class="comment-context-area">{{ Comment.context }}</div>
+      <div class="comment-button-area">
+        <button class="material-icons" @click="editComment">edit</button>
+        <button class="material-icons" @click="deleteComment">
+          delete_outline
+        </button>
       </div>
     </div>
   </div>
 </template>
 <script>
+import board from "@/Data/data.js";
 export default {
   name: "CommentList",
-
+  props: {
+    Comment: Object,
+  },
   components: {},
   data() {
-    return {};
+    return {
+      commentWriter: board.User.filter(
+        (item) => item.user_id === this.Comment.user_id
+      )[0].name,
+      // data.js의 comment배열에 userName이 없으므로 user배열에 있는것과 연결시켜주기
+    };
   },
-  methods: {},
+  methods: {
+    editComment() {
+      alert(2222);
+    },
+    deleteComment() {
+      alert(1111);
+      const deleteComment = board.Comment.findIndex(
+        (item) => item.comment_id === this.comment_id
+      );
+      board.Comment.splice(deleteComment, 1);
+    },
+  },
 };
 </script>
 
 <style>
-.comment-list-item {
+.comment-area {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 1em;
 }
-.comment-list-item-name {
+.comment-writer-area {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  border: 0.5px solid black;
+  float: left;
+  border-top: 0.3px solid gray;
+
   padding: 1em;
+  width: 150px;
+  height: 40px;
+  font-weight: bold;
 }
-.comment-list-item-context {
+.comment-context-area {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50em;
-  border: 0.5px solid black;
+  width: 66em;
+  height: 40px;
+  border-top: 0.3px solid gray;
 }
-.comment-list-item-button {
+.comment-button-area {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  border: 0.5px solid black;
+  border-top: 0.3px solid gray;
+
+  height: 40px;
   padding: 1em;
 }
 .btn {
   margin-bottom: 1em;
 }
-.comment-list-item-subcomment-list {
+.update-comment,
+.delete-comment {
+  width: 50px;
+  height: 30px;
+}
+button .comment-list-item-subcomment-list {
   display: flex;
   justify-content: space-between;
   padding-bottom: 1em;
   margin-left: 10em;
+}
+.material-icons {
+  border: 0;
+  margin: 4px;
 }
 </style>

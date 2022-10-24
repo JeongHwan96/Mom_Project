@@ -52,32 +52,32 @@ export default {
       };
     }); //Contents에 user_id User에 있는 user_id를 연결한다. 두 테이블을  외래키 연결하는 느낌...
     return {
-      perPage: 15,
+      perPage: 15, //한 페이지에 글을 몇 개씩 보여줄건지
       currentPage: 1,
       items: items,
       fields: [
         {
           key: "content_id",
-          labe: "글번호",
+          label: "글번호",
         },
         {
           key: "title",
-          labe: "제목",
+          label: "제목",
         },
         {
           key: "user_name",
-          labe: "작성자",
+          label: "글쓴이",
         },
         {
           key: "create_at",
-          labe: "작성일",
+          label: "등록일",
         },
       ],
     };
   },
   computed: {
     rows() {
-      return this.items.length;
+      return this.items.length; //현재 게시글의 수를 항상 계산해줌
     },
   },
   components: { Mom_Header },
