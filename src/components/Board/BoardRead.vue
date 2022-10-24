@@ -25,6 +25,7 @@
           <div class="delete-update-button">
             <b-button @click="updateBoard" class="updateBoard">수정</b-button>
             <b-button @click="deleteBoard" class="deleteBoard">삭제</b-button>
+            <b-button @click="goList" variant="outline-dark">글목록</b-button>
           </div>
         </div>
         <div class="content-detail-content">
@@ -36,12 +37,6 @@
           <!-- <button class="replyButton">등록</button> -->
         </div>
       </b-card>
-    </div>
-
-    <div class="content-detail-button">
-      <b-button @click="PrevRead">이전글</b-button>
-      <b-button @click="NextRead">다음글</b-button>
-      <b-button @click="goList">글목록</b-button>
     </div>
   </div>
 </template>
@@ -92,7 +87,7 @@ export default {
 
 <style>
 .readArea {
-  margin: 120px 280px 10px 280px;
+  margin: 120px 280px 40px 280px;
 }
 .content-detail-content-info {
   border-bottom: 1px solid gray;

@@ -2,7 +2,7 @@
   <div>
     <div :key="index" v-for="(item, index) in comments">
       <!-- board.js의 comment 배열에서 해당 글에 맞는 댓글만 가져오기 위해  -->
-      <CommentList :comment="item" />
+      <CommentList :comment="item" :updateComment="updateComment" />
       <!-- props로 comment객체를 넘겨준다 -->
     </div>
     <CommentInsert :contentId="contentId" :updateComment="updateComment" />

@@ -6,7 +6,7 @@
       </div>
       <div class="comment-context-area">{{ Comment.context }}</div>
       <div class="comment-button-area">
-        <button class="material-icons" @click="editComment">edit</button>
+        <!-- <button class="material-icons" @click="editComment">edit</button> -->
         <button class="material-icons" @click="deleteComment">
           delete_outline
         </button>
@@ -20,6 +20,7 @@ export default {
   name: "CommentList",
   props: {
     Comment: Object,
+    updateComment: Function,
   },
   components: {},
   data() {
@@ -31,15 +32,13 @@ export default {
     };
   },
   methods: {
-    editComment() {
-      alert(2222);
-    },
     deleteComment() {
-      alert(1111);
+      const commentIndex = this.Comment.comment_id; //board.js에 있는 Comment객체에서 comment_id를 가져온다
       const deleteComment = board.Comment.findIndex(
-        (item) => item.comment_id === this.comment_id
+        (item) => item.comment_id === commentIndex
       );
       board.Comment.splice(deleteComment, 1);
+      this.updateComment();
     },
   },
 };
